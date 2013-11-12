@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Question</title>
+  </head>
+  <body>
+    <h1>Add Question</h1>
+    <form action="{% url 'questions_add' %}" method="POST">
+       {% csrf_token %}
+       <p>{{ form.non_field_errors }}</p>
+       <div class="control-group">
+          <label for="id_text">Question Text</lable>
+          <p>{{ form.text.errors }}</p>
+          <div class="controls">
+               {{ form.text }}
+          </div>
+       </div>       
+       <div class="control-group">
+          <label for="id_answer_keywords">Answer Keywords</lable>
+          <p>{{ form.answer_keywords.errors }}</p>
+          <div class="controls">
+               {{ form.answer_keywords }}
+          </div>
+       </div>
+       <div class="form-actions">
+           <button type="submit">Add</button>
+       </div>
+    </form>
+  </body>
+</html>
