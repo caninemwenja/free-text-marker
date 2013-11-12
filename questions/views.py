@@ -6,7 +6,8 @@ from forms import QuestionForm
 from models import Question
 
 def index(request):
-    return render(request, "questions/index.html")
+    questions = Question.objects.all()
+    return render(request, "questions/index.html", { "questions": questions })
 
 def add(request):
     if request.method != 'POST':
