@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Answer Question</title>
+  </head>
+  <body>
+    <h1>Answer Question</h1>
+    <a href="{% url 'questions_index' %}">Try other questions</a>
+    <hr>
+    <form action="{% url 'questions_answer' question.id %}" method="POST" id="answer_question_form">
+       {% csrf_token %}
+       <p>{{ form.non_field_errors }}</p>
+       <div class="control-group">
+          <label for="id_question_text">{{ question.question_text }}</label>
+          <p>{{ form.answer.errors }}</p>
+          {% if has_answer %}
+              {% if match %}
+              <p id="correct">Congratulations! You got the question right.</p>
+              {% else %}
+              <p id="wrong">Sorry, your answer was wrong. Please try again</p>
+              {% endif %}
+          {% endif %}
+          <div class="controls">
+               {{ form.answer }}
+          </div>
+       </div>       
+       <div class="form-actions">
+           <button type="submit">Try</button>
+       </div>
+    </form>
+  </body>
+</html>

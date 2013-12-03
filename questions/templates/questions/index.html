@@ -9,7 +9,7 @@
      {% if questions %}
      <ul>
         {% for question in questions %}
-           <li>{{ question.question_text }}: {{ question.answer_keywords }}</li>
+           <li>{{ question.question_text }}: {{ question.answer_keywords }} <a href="{% url 'questions_answer' question.id %}">Answer</a></li>
         {% endfor %}
      <ul>
      {% else %}

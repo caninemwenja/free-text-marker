@@ -10,3 +10,5 @@ class QuestionForm(forms.ModelForm):
     question_text = forms.CharField()
     answer_keywords = forms.CharField(widget=forms.Textarea)
 
+class AnswerForm(forms.Form):
+    answer = forms.CharField(widget=forms.Textarea)
