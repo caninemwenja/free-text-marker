@@ -1,5 +1,14 @@
 Django==1.5.4
-gunicorn==18.0
+PyYAML==3.10
 South==0.8.2
+WebOb==1.2.3
 WebTest==2.0.9
+argparse==1.2.1
+beautifulsoup4==4.3.2
 django-webtest==1.7.5
+gunicorn==18.0
+nltk==2.0.4
+numpy==1.8.0
+six==1.4.1
+waitress==0.8.8
+wsgiref==0.1.2
